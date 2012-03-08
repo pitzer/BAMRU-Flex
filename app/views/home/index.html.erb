@@ -1,0 +1,47 @@
+<%= render :partial => 'gallery' %>
+<%= render :partial => 'title_bar', :locals => {:title => "Bay Area Mountain Rescue Unit"} %>
+
+<div class='row' id='banner-row' style='margin-top: 10px;'>
+  <div class='span2' id='bamru-logo' style="text-align: center; margin-top: 5px;">
+      <img src="images/Logo_BAMRU.gif">
+  </div>
+
+  <div id='bam-text' class='span5' style='margin-top: 10px; margin-bottom: 5px; text-align: right;'>
+    <strong id='bam-mesg'>
+      BAMRU is a wilderness search and rescue team.<br/>
+      Our volunteers specialize in difficult terrain and weather.<br/>
+      We are based in the Bay Area and operate across California.<br/>
+      Over 40 years, BAMRU has found and saved hundreds of people.
+    </strong>
+  </div>
+  
+  <div class='span3 center-on-tablet'>
+    <a href="/donate" class="btn btn-primary" style='width: 120px; margin-bottom: 8px; text-align: center;'>Attend an Event</a>
+    <a href="/join" class="btn btn-primary"   style='width: 120px; margin-bottom: 8px; text-align: center;'>Join BAMRU</a>
+    <a href="/donate" class="btn btn-primary" style='width: 120px; margin-bottom: 8px; text-align: center;'>Donate to BAMRU</a>
+  </div>
+
+  <div class='span2 hide-on-tablet' style="text-align: center;">
+    <a id='associates' href="#" style='display: inline-block;'><img src='images/logos.jpg'/></a>
+  </div>
+
+</div>
+
+<div class='row hide-on-phone'>
+  <div class='span12' style='background: #16225e; height: 15px; margin-bottom: 5px;'>
+  </div>
+</div>
+
+<div class='row'>
+
+  <div class='span12 hide-on-phone'>
+
+    <div id="bottom-gallery" data-toggle="modal-gallery" data-target="#modal-gallery" style="overflow: hidden; white-space: nowrap;">
+      <% @images.reverse.each do |path| %>
+        <a href="<%= path %>" title="<%= path.split('/').last %>" rel="gallery"><img src="<%= path %>" style="max-height: 100px; max-width: 300px;" /></a>
+      <% end %>
+    </div>
+
+  </div>
+
+</div>

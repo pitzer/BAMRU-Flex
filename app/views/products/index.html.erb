@@ -1,0 +1,52 @@
+<% flash.each do |name, msg| %>
+  <div class="alert alert-<%= name == :notice ? 'success' : 'error' %>">
+    <a class="close" data-dismiss="alert">x</a>
+    <%= msg %>
+  </div>
+<% end %>
+
+<div class='row'>
+  <div class='span9'>
+
+    <h1>Products</h1>
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Created at</th>
+        <th>Actions</th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @products.each do |product| %>
+        <tr>
+          <td><%= product.id %></td>
+          <td><%= link_to product.name, product_path(product) %></td>
+          <td><%= product.created_at %></td>
+          <td>
+            <%= link_to 'Edit', edit_product_path(product), :class => 'btn btn-mini' %>
+            <%= link_to 'Destroy', product_path(product), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
+          </td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+
+    <%= link_to 'New', new_product_path, :class => 'btn btn-primary' %>
+
+  </div>
+  <div class='span3 hidden-phone'>
+    <div>
+
+      <h2>About Us</h2>
+      Lorem ipsum blah blah. This is more blah blah blah.
+    </div>
+  </div>
+
+</div>
+
+
+
+
+
