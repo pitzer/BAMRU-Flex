@@ -1,0 +1,9 @@
+<div class='row hide-on-phone'>
+  <div class='span12'>
+    <div data-toggle="modal-gallery" data-slideshow="3000" data-target="#modal-gallery" style="overflow: hidden; white-space: nowrap;">
+      <% images.each do |path| %>
+        <a href="<%= path %>" title="<%= @titles[path] %>" rel="gallery"><img alt="<%= @titles[path] %>" src="<%= @thumbs[path] %>" /></a>
+      <% end %>
+    </div>
+  </div>
+</div>

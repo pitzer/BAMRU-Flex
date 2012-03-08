@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+
+system "rm thumbs/*"
+
+Dir.glob("*.jpg").each do |file|
+  puts "Generating thumbnail for #{file}"
+  system "convert #{file} -resize 325x100 thumbs/#{file}"
+end
+
+puts "Done"

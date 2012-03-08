@@ -1,4 +1,5 @@
-<%= render :partial => 'gallery' %>
+<%= render :partial => 'gallery_popup' %>
+<%= render :partial => 'gallery_row', :locals => {:images => @images} %>
 <%= render :partial => 'title_bar', :locals => {:title => "Bay Area Mountain Rescue Unit"} %>
 
 <div class='row' id='banner-row' style='margin-top: 10px;'>
@@ -36,11 +37,7 @@
 
   <div class='span12 hide-on-phone'>
 
-    <div id="bottom-gallery" data-toggle="modal-gallery" data-target="#modal-gallery" style="overflow: hidden; white-space: nowrap;">
-      <% @images.reverse.each do |path| %>
-        <a href="<%= path %>" title="<%= path.split('/').last %>" rel="gallery"><img src="<%= path %>" style="max-height: 100px; max-width: 300px;" /></a>
-      <% end %>
-    </div>
+    <%= render :partial => 'gallery_row', :locals => {:images => @images.reverse} %>
 
   </div>
 

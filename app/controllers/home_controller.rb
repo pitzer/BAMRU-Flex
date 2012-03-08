@@ -3,7 +3,9 @@ require Rails.root + 'lib/csv_generator'
 class HomeController < ApplicationController
 
   def index
-    @images = header_images()
+    @images = header_images
+    @thumbs = header_thumbs
+    @titles = header_titles
   end
 
   def calendar
@@ -33,18 +35,28 @@ class HomeController < ApplicationController
 
   private
 
-  def image_file(path)
-    return nil if path.nil?
-    file = "images/page_gallery/#{path}.jpg"
-    File.exist?("public/#{file}") ? file : nil
-  end
-
-  def header_images(lead_image = nil)
-    header_image = image_file(lead_image)
-    files = Dir.glob('public/images/static_gallery/*').sort.map do |path|
+  def header_images
+    Dir.glob('public/images/static_gallery/*.jpg').sort.map do |path|
       path.gsub('public/', '')
     end
-    header_image.nil? ? files : files.unshift(header_image)
+  end
+
+  def header_thumbs
+    header_images.reduce({}) do |a, image_path|
+      thumbnail_path = image_path.split('/').insert(-2, "thumbs").join('/')
+      a[image_path] = thumbnail_path
+      a
+    end
+  end
+
+  def header_titles
+    header_images.reduce({}) do |a, image_path|
+      filename = image_path.split('/').last
+      basename = filename.split('.').first
+      title = basename.split('_').map {|x| x.capitalize}.join(' ')
+      a[image_path] = title
+      a
+    end
   end
 
 end

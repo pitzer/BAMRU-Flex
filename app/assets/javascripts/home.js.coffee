@@ -22,8 +22,8 @@ setLogoMargin   = -> $('#bamru-logo').css('margin-top', '10px')
 setDebugWidth   = (width) -> $('#cx-width').html(width)
 
 formatDisplay = ->
+  return unless location.pathname == '/'
   width = window.innerWidth
-  setDebugWidth(width)
   if width >= 1200
     addBreaks()
     alignText('right')
@@ -58,6 +58,9 @@ hoverOptions =
 $(document).ready ->
   $('#associates').tooltip(hoverOptions)
   formatDisplay()
-  $(window).resize -> formatDisplay()
+  setDebugWidth(window.innerWidth)
+  $(window).resize ->
+    setDebugWidth(window.innerWidth)
+    formatDisplay()
 
 
