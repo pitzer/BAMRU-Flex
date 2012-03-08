@@ -107,11 +107,11 @@ end
 
 desc "Setup Primary site."
 task :setup_primary, :roles => [:primary] do
-  if defined?(PRIMARY)
-    run "cd #{current_path} ; bundle exec rake set_primary_role"
-    url = defined?(BACKUP) ? "http://#{BACKUP}" : ""
-    run "cd #{current_path} ; bundle exec rake set_peer PEER_URL=#{url}"
-  end
+  #if defined?(PRIMARY)
+  #  run "cd #{current_path} ; bundle exec rake set_primary_role"
+  #  url = defined?(BACKUP) ? "http://#{BACKUP}" : ""
+  #  run "cd #{current_path} ; bundle exec rake set_peer PEER_URL=#{url}"
+  #end
 end
 
 desc "Setup Backup site."
