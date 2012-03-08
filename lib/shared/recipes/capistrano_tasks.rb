@@ -49,7 +49,7 @@ after :nginx_conf, :restart_nginx
 
 desc "Reset Cron"
 task :reset_cron do
-  run "cd #{release_path} && bundle exec whenever --update-crontab #{application}"
+  #run "cd #{release_path} && bundle exec whenever --update-crontab #{application}"
 end
 
 desc "Setup shared cache."
