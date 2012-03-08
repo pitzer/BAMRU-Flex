@@ -17,8 +17,8 @@ gem 'wirble'
 
 gem "fastercsv"
 gem "gcal4ruby"
-gem "rack"
-gem "rack-flash"
+# gem "rack"
+# gem "rack-flash"
 gem "daemons"
 gem "whenever"
 gem "thor"
