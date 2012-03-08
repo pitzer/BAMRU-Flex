@@ -1,8 +1,7 @@
 .bundle
 db/*.sqlite3
 log/*.log
-tmp
-tmp/*
-!tmp/restart.txt
+/tmp/*
+!/tmp/restart.txt
 .idea
 _archive
