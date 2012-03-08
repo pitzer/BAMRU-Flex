@@ -58,6 +58,7 @@ task :setup_shared_cache do
   vendor_dir = "#{release_path}/vendor"
   run "mkdir -p #{cache_dir} #{vendor_dir}"
   run "ln -s #{cache_dir} #{vendor_dir}/cache"
+  run "cd #{release_path}; RAILS_ENV=production rake assets:precompile"
 end
 
 desc "Send SSH keys to alt55.com."
