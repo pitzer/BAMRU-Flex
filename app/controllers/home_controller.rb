@@ -17,6 +17,12 @@ class HomeController < ApplicationController
     end
   end
 
+  def operations
+    @start = Time.now
+    @finish = Time.now + 1.year
+    @filename = "operations.kml"
+  end
+
   def alt
     if params['page'].nil?
       render 'index'

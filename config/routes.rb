@@ -8,7 +8,7 @@ Store::Application.routes.draw do
   match '/' => 'home#index'
 
   match '/calendar' => 'home#calendar'
-
+  match '/operations' => 'home#operations'
   match ':page(.:format)' => 'home#alt'
 
   root :to => 'home#index'

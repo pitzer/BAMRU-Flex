@@ -1,0 +1,374 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<kml xmlns='http://www.opengis.net/kml/2.2'>
+  <Document>
+    
+      <Placemark>
+        <name>BAMRU at the San Bruno Fire (2010-09-12)</name>
+        <description>
+          <![CDATA[Leader: Chang<br/>Find more information on the <a href='http://bamru.blogspot.com/2010/09/bamru-at-san-bruno-fire.html'>BAMRU Blog</a>]]>
+        </description>
+        <Point>
+          <coordinates>-122.447896,37.648472,0</coordinates>
+        </Point>
+        <styleUrl>#my_style</styleUrl>
+        <Style id="my_style">
+          <BalloonStyle>
+            <text><![CDATA[<b>$[name]</b><br/>$[description]]]></text>
+          </BalloonStyle>
+        </Style>
+      </Placemark>
+    
+      <Placemark>
+        <name>Butte County Search (2010-10-25)</name>
+        <description>
+          <![CDATA[Leader: Kantarjiev<br/>Find more information on the <a href='http://bamru.blogspot.com/2010/10/butte-county-search.html'>BAMRU Blog</a>]]>
+        </description>
+        <Point>
+          <coordinates>-121.26509,39.96655,0</coordinates>
+        </Point>
+        <styleUrl>#my_style</styleUrl>
+        <Style id="my_style">
+          <BalloonStyle>
+            <text><![CDATA[<b>$[name]</b><br/>$[description]]]></text>
+          </BalloonStyle>
+        </Style>
+      </Placemark>
+    
+      <Placemark>
+        <name>Midnight Mountain Search (2010-11-28)</name>
+        <description>
+          <![CDATA[Leader: Frantz<br/>Find more information on the <a href='http://bamru.blogspot.com/2010/11/midnight-mountain-search.html'>BAMRU Blog</a>]]>
+        </description>
+        <Point>
+          <coordinates>-122.327758,37.202039,0</coordinates>
+        </Point>
+        <styleUrl>#my_style</styleUrl>
+        <Style id="my_style">
+          <BalloonStyle>
+            <text><![CDATA[<b>$[name]</b><br/>$[description]]]></text>
+          </BalloonStyle>
+        </Style>
+      </Placemark>
+    
+      <Placemark>
+        <name>Cold Night in Loma Mar (2010-12-09)</name>
+        <description>
+          <![CDATA[Leader: Herman<br/>Find more information on the <a href='http://bamru.blogspot.com/2010/12/cold-night-in-loma-mar.html'>BAMRU Blog</a>]]>
+        </description>
+        <Point>
+          <coordinates>-122.308582,37.271054,0</coordinates>
+        </Point>
+        <styleUrl>#my_style</styleUrl>
+        <Style id="my_style">
+          <BalloonStyle>
+            <text><![CDATA[<b>$[name]</b><br/>$[description]]]></text>
+          </BalloonStyle>
+        </Style>
+      </Placemark>
+    
+      <Placemark>
+        <name>Sierra Crest Search (2010-12-30)</name>
+        <description>
+          <![CDATA[Leader: Marciniak<br/>Find more information on the <a href='http://bamru.blogspot.com/2011/01/sierra-crest-search.html'>BAMRU Blog</a>]]>
+        </description>
+        <Point>
+          <coordinates>-120.227695,39.178518,0</coordinates>
+        </Point>
+        <styleUrl>#my_style</styleUrl>
+        <Style id="my_style">
+          <BalloonStyle>
+            <text><![CDATA[<b>$[name]</b><br/>$[description]]]></text>
+          </BalloonStyle>
+        </Style>
+      </Placemark>
+    
+      <Placemark>
+        <name>Marin County Search (2011-01-29)</name>
+        <description>
+          <![CDATA[Leader: Dimmler<br/>Find more information on the <a href='http://bamru.blogspot.com/2011/01/marin-county-search.html'>BAMRU Blog</a>]]>
+        </description>
+        <Point>
+          <coordinates>-122.554978,37.962424,0</coordinates>
+        </Point>
+        <styleUrl>#my_style</styleUrl>
+        <Style id="my_style">
+          <BalloonStyle>
+            <text><![CDATA[<b>$[name]</b><br/>$[description]]]></text>
+          </BalloonStyle>
+        </Style>
+      </Placemark>
+    
+      <Placemark>
+        <name>Shasta Search (2011-02-20)</name>
+        <description>
+          <![CDATA[Leader: Yaffe<br/>Find more information on the <a href='http://bamru.blogspot.com/2011/02/shasta-search.html'>BAMRU Blog</a>]]>
+        </description>
+        <Point>
+          <coordinates>-122.193457,41.325408,0</coordinates>
+        </Point>
+        <styleUrl>#my_style</styleUrl>
+        <Style id="my_style">
+          <BalloonStyle>
+            <text><![CDATA[<b>$[name]</b><br/>$[description]]]></text>
+          </BalloonStyle>
+        </Style>
+      </Placemark>
+    
+      <Placemark>
+        <name>Golden Gate Park Search (2011-02-28)</name>
+        <description>
+          <![CDATA[Leader: Lass<br/>Find more information on the <a href='http://bamru.blogspot.com/2011/02/golden-gate-park-search.html'>BAMRU Blog</a>]]>
+        </description>
+        <Point>
+          <coordinates>-122.483519,37.76904,0</coordinates>
+        </Point>
+        <styleUrl>#my_style</styleUrl>
+        <Style id="my_style">
+          <BalloonStyle>
+            <text><![CDATA[<b>$[name]</b><br/>$[description]]]></text>
+          </BalloonStyle>
+        </Style>
+      </Placemark>
+    
+      <Placemark>
+        <name>Missing Sonoma Man (2011-03-07)</name>
+        <description>
+          <![CDATA[Leader: Kantarjiev<br/>Find more information on the <a href='http://bamru.blogspot.com/2011/03/missing-sonoma-man.html'>BAMRU Blog</a>]]>
+        </description>
+        <Point>
+          <coordinates>-123.799459,39.307674,0</coordinates>
+        </Point>
+        <styleUrl>#my_style</styleUrl>
+        <Style id="my_style">
+          <BalloonStyle>
+            <text><![CDATA[<b>$[name]</b><br/>$[description]]]></text>
+          </BalloonStyle>
+        </Style>
+      </Placemark>
+    
+      <Placemark>
+        <name>Tsunami Response (2011-03-14)</name>
+        <description>
+          <![CDATA[Leader: Frantz<br/>Find more information on the <a href='http://bamru.blogspot.com/2011/03/tsunami-response.html'>BAMRU Blog</a>]]>
+        </description>
+        <Point>
+          <coordinates>-122.428586,37.463552,0</coordinates>
+        </Point>
+        <styleUrl>#my_style</styleUrl>
+        <Style id="my_style">
+          <BalloonStyle>
+            <text><![CDATA[<b>$[name]</b><br/>$[description]]]></text>
+          </BalloonStyle>
+        </Style>
+      </Placemark>
+    
+      <Placemark>
+        <name>Storm Watch (2011-03-25)</name>
+        <description>
+          <![CDATA[Leader: Frantz<br/>Find more information on the <a href='http://bamru.blogspot.com/2011/03/storm-watch.html'>BAMRU Blog</a>]]>
+        </description>
+        <Point>
+          <coordinates>-122.382599,37.251888,0</coordinates>
+        </Point>
+        <styleUrl>#my_style</styleUrl>
+        <Style id="my_style">
+          <BalloonStyle>
+            <text><![CDATA[<b>$[name]</b><br/>$[description]]]></text>
+          </BalloonStyle>
+        </Style>
+      </Placemark>
+    
+      <Placemark>
+        <name>Three Hikers Found (2011-03-27)</name>
+        <description>
+          <![CDATA[Leader: Chang<br/>Find more information on the <a href='http://bamru.blogspot.com/2011/03/three-hikers-found.html'>BAMRU Blog</a>]]>
+        </description>
+        <Point>
+          <coordinates>-122.952218,39.421908,0</coordinates>
+        </Point>
+        <styleUrl>#my_style</styleUrl>
+        <Style id="my_style">
+          <BalloonStyle>
+            <text><![CDATA[<b>$[name]</b><br/>$[description]]]></text>
+          </BalloonStyle>
+        </Style>
+      </Placemark>
+    
+      <Placemark>
+        <name>Snowboarder Located (2011-03-28)</name>
+        <description>
+          <![CDATA[Leader: Jensen<br/>Find more information on the <a href='http://bamru.blogspot.com/2011/03/missing-snowboarder-located.html'>BAMRU Blog</a>]]>
+        </description>
+        <Point>
+          <coordinates>-120.081139,38.809729,0</coordinates>
+        </Point>
+        <styleUrl>#my_style</styleUrl>
+        <Style id="my_style">
+          <BalloonStyle>
+            <text><![CDATA[<b>$[name]</b><br/>$[description]]]></text>
+          </BalloonStyle>
+        </Style>
+      </Placemark>
+    
+      <Placemark>
+        <name>Sonoma Mutual Aid (2011-03-29)</name>
+        <description>
+          <![CDATA[Leader: Frantz<br/>Find more information on the <a href='http://bamru.blogspot.com/2011/03/sonoma-mutual-aid.html'>BAMRU Blog</a>]]>
+        </description>
+        <Point>
+          <coordinates>-122.624039,38.413443,0</coordinates>
+        </Point>
+        <styleUrl>#my_style</styleUrl>
+        <Style id="my_style">
+          <BalloonStyle>
+            <text><![CDATA[<b>$[name]</b><br/>$[description]]]></text>
+          </BalloonStyle>
+        </Style>
+      </Placemark>
+    
+      <Placemark>
+        <name>Portola 10-22 (2011-03-31)</name>
+        <description>
+          <![CDATA[Leader: Frantz<br/>Find more information on the <a href='http://bamru.blogspot.com/2011/03/portola-10-22.html'>BAMRU Blog</a>]]>
+        </description>
+        <Point>
+          <coordinates>-122.201422,37.238846,0</coordinates>
+        </Point>
+        <styleUrl>#my_style</styleUrl>
+        <Style id="my_style">
+          <BalloonStyle>
+            <text><![CDATA[<b>$[name]</b><br/>$[description]]]></text>
+          </BalloonStyle>
+        </Style>
+      </Placemark>
+    
+      <Placemark>
+        <name>Devil's Canyon Search (2011-04-11)</name>
+        <description>
+          <![CDATA[Leader: Little<br/>Find more information on the <a href='http://bamru.blogspot.com/2011/04/devils-canyon-search.html'>BAMRU Blog</a>]]>
+        </description>
+        <Point>
+          <coordinates>-122.198678,37.276761,0</coordinates>
+        </Point>
+        <styleUrl>#my_style</styleUrl>
+        <Style id="my_style">
+          <BalloonStyle>
+            <text><![CDATA[<b>$[name]</b><br/>$[description]]]></text>
+          </BalloonStyle>
+        </Style>
+      </Placemark>
+    
+      <Placemark>
+        <name>San Carlos Search (2011-04-14)</name>
+        <description>
+          <![CDATA[Leader: Marcinak<br/>Find more information on the <a href='http://bamru.blogspot.com/2011/04/san-carlos-search.html'>BAMRU Blog</a>]]>
+        </description>
+        <Point>
+          <coordinates>-122.283647,37.482803,0</coordinates>
+        </Point>
+        <styleUrl>#my_style</styleUrl>
+        <Style id="my_style">
+          <BalloonStyle>
+            <text><![CDATA[<b>$[name]</b><br/>$[description]]]></text>
+          </BalloonStyle>
+        </Style>
+      </Placemark>
+    
+      <Placemark>
+        <name>Missing Student Found (2011-05-09)</name>
+        <description>
+          <![CDATA[Leader: Frantz<br/>Find more information on the <a href='http://bamru.blogspot.com/2011/05/missing-student-found.html'>BAMRU Blog</a>]]>
+        </description>
+        <Point>
+          <coordinates>-122.629387,38.439113,0</coordinates>
+        </Point>
+        <styleUrl>#my_style</styleUrl>
+        <Style id="my_style">
+          <BalloonStyle>
+            <text><![CDATA[<b>$[name]</b><br/>$[description]]]></text>
+          </BalloonStyle>
+        </Style>
+      </Placemark>
+    
+      <Placemark>
+        <name>Golden Gate Search (2011-05-24)</name>
+        <description>
+          <![CDATA[Leader: Frantz<br/>Find more information on the <a href='http://bamru.blogspot.com/2011/05/golden-gate-search.html'>BAMRU Blog</a>]]>
+        </description>
+        <Point>
+          <coordinates>-122.477584,37.803518,0</coordinates>
+        </Point>
+        <styleUrl>#my_style</styleUrl>
+        <Style id="my_style">
+          <BalloonStyle>
+            <text><![CDATA[<b>$[name]</b><br/>$[description]]]></text>
+          </BalloonStyle>
+        </Style>
+      </Placemark>
+    
+      <Placemark>
+        <name>WS-100 (2011-06-25)</name>
+        <description>
+          <![CDATA[Leader: Marciniak<br/>Find more information on the <a href='BAMRU will be operating a WS-100 (100 mile Trans-Sierra Ultra Marathon) medical station.'>BAMRU Blog</a>]]>
+        </description>
+        <Point>
+          <coordinates>,,0</coordinates>
+        </Point>
+        <styleUrl>#my_style</styleUrl>
+        <Style id="my_style">
+          <BalloonStyle>
+            <text><![CDATA[<b>$[name]</b><br/>$[description]]]></text>
+          </BalloonStyle>
+        </Style>
+      </Placemark>
+    
+      <Placemark>
+        <name>Amador County Search (2011-07-04)</name>
+        <description>
+          <![CDATA[Leader: Parker<br/>Find more information on the <a href='http://bamru.blogspot.com/2011/07/amador-county-search.html'>BAMRU Blog</a>]]>
+        </description>
+        <Point>
+          <coordinates>-120.205698,38.591621,0</coordinates>
+        </Point>
+        <styleUrl>#my_style</styleUrl>
+        <Style id="my_style">
+          <BalloonStyle>
+            <text><![CDATA[<b>$[name]</b><br/>$[description]]]></text>
+          </BalloonStyle>
+        </Style>
+      </Placemark>
+    
+      <Placemark>
+        <name>Missing Hiker (2011-07-07)</name>
+        <description>
+          <![CDATA[Leader: Hoagland<br/>Find more information on the <a href='http://bamru.blogspot.com/2011/07/missing-hiker-in-portola-state-park.html'>BAMRU Blog</a>]]>
+        </description>
+        <Point>
+          <coordinates>-122.235157,37.234609,0</coordinates>
+        </Point>
+        <styleUrl>#my_style</styleUrl>
+        <Style id="my_style">
+          <BalloonStyle>
+            <text><![CDATA[<b>$[name]</b><br/>$[description]]]></text>
+          </BalloonStyle>
+        </Style>
+      </Placemark>
+    
+      <Placemark>
+        <name>Covelo Search (2011-08-03)</name>
+        <description>
+          <![CDATA[Leader: Hoagland<br/>Find more information on the <a href='http://bamru.blogspot.com/2011/08/covelo-search.html'>BAMRU Blog</a>]]>
+        </description>
+        <Point>
+          <coordinates>-123.232036,39.761549,0</coordinates>
+        </Point>
+        <styleUrl>#my_style</styleUrl>
+        <Style id="my_style">
+          <BalloonStyle>
+            <text><![CDATA[<b>$[name]</b><br/>$[description]]]></text>
+          </BalloonStyle>
+        </Style>
+      </Placemark>
+    
+  </Document>
+</kml>
