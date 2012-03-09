@@ -1,24 +1,27 @@
-<%= render :partial => 'alt_header', :locals => {:title => "Event Calendar", :image => "calendar"} %>
+<%= render :partial => 'alt_header', :locals => {:title => "Event Calendar"} %>
 
 <div class='row'>
 
-  <div class='span2'>
+  <div class='span3'>
+
+    <%= render :partial => 'alt_sidebar_image', :locals => { :image => "calendar" } %>
+
     <div class='row'>
-      <div class='span2'>
+      <div class='span3'>
         First Item on Sidebar
       </div>
     </div>
     <div class='row'>
-      <div class='span2'>
+      <div class='span3'>
         Second item on Sidebar
       </div>
     </div>
   </div>
 
-  <div class='span10'>
+  <div class='span9'>
 
     <div class='row'>
-      <div class='span10'>
+      <div class='span9'>
         Our general meetings are open to the public. Some trainings are open to
         guests who have attended the general meeting preceding the training (see
         Guest Policy to the right); others are open only to BAMRU trainees and

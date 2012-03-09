@@ -1,16 +1,33 @@
 <%= render :partial => 'alt_header', :locals => {:title => "Donate to BAMRU", :image => "donate"} %>
 
+<div class="row">
 
-<div class='row'>
-  <div class='span12'>
+<div class='span3'>
 
-    <div class="content">
+  <%= render :partial => 'alt_sidebar_image', :locals => { :image => "join" } %>
+
+  <div class='row'>
+    <div class='span3'>
+      First Item on Sidebar
+    </div>
+  </div>
+  <div class='row'>
+    <div class='span3'>
+      Second item on Sidebar
+    </div>
+  </div>
+</div>
+
+<div class='span9'>
+  <div class='row'>
+    <div class='span9'>
 
       BAMRU is an all-volunteer wilderness search and rescue (SAR) unit, based
       in the San Francisco Bay Area. We look for and help people lost or
       stranded anywhere outdoors in California.<p><p/>
 
-      We depend on public contributions to cover our expenses. Please donate.<p></p>
+      We depend on public contributions to cover our expenses. Please donate.
+      <p></p>
 
       <%= render :partial => 'paypal_form' %>
 
@@ -59,7 +76,8 @@
 
       BAMRU members donate their time for training and emergency operations. No
       payment is expected for our services. BAMRU has also sponsored three other
-      teams in achieving their Mountain Rescue Association accreditations.<p></p>
+      teams in achieving their Mountain Rescue Association accreditations.
+      <p></p>
 
       In addition to cash donations, BAMRU is in need of replacing its aging
       rescue truck with a 3/4 ton or larger 4x4 pickup or 4x4 van, and greatly
@@ -69,4 +87,6 @@
 
     </div>
   </div>
+
+</div>
 </div>
