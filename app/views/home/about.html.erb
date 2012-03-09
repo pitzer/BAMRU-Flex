@@ -2,23 +2,10 @@
 
 <div class='row'>
 
-  <div class='span3'>
+    <%= render :partial => 'alt_sidebar', :locals => { :image => "about" } %>
 
-    <%= render :partial => 'alt_sidebar_image', :locals => { :image => "about" } %>
+    <%= render :layout => 'alt_body' do %>
 
-    <div class='row'>
-      <div class='span3'>
-        First Item on Sidebar
-      </div>
-    </div>
-    <div class='row'>
-      <div class='span3'>
-        Second item on Sidebar
-      </div>
-    </div>
-  </div>
-
-  <div class='span9'>
 
     <div class='row'>
       <div class='span9'>
@@ -188,5 +175,5 @@
 
       </div>
     </div>
-  </div>
+  <% end %>
 </div>

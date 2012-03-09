@@ -2,23 +2,17 @@
 
 <div class="row">
 
-<div class='span3'>
+  <%= render :layout => 'alt_sidebar', :locals => { :image => "join" } do %>
+    <p></p>
 
-  <%= render :partial => 'alt_sidebar_image', :locals => { :image => "join" } %>
+    <a href="#" class="btn btn-primary">Learn about our Equipment Needs</a>
+    <a href="#" class="btn btn-primary">Contact our Treasurer</a>
+    <a href="#" class="btn btn-primary">Meet our Sponsors</a>
 
-  <div class='row'>
-    <div class='span3'>
-      First Item on Sidebar
-    </div>
-  </div>
-  <div class='row'>
-    <div class='span3'>
-      Second item on Sidebar
-    </div>
-  </div>
-</div>
+    <% end %>
 
-<div class='span9'>
+  <%= render :layout => 'alt_body', :locals => { :image => "join" } do %>
+
   <div class='row'>
     <div class='span9'>
 
@@ -88,5 +82,6 @@
     </div>
   </div>
 
-</div>
+
+    <% end %>
 </div>

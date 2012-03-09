@@ -2,33 +2,27 @@
 
 <div class='row'>
 
-  <div class='span3'>
+  <%= render :layout => 'alt_sidebar', :locals => {:image => "operations"} do %>
 
-    <%= render :partial => 'alt_sidebar_image', :locals => {:image => "operations"} %>
+    <p></p>
 
-    <div class='row'>
-      <div class='span3'>
-        First Item on Sidebar
-      </div>
-    </div>
-    <div class='row'>
-      <div class='span3'>
-        Second item on Sidebar
-      </div>
-    </div>
-  </div>
+    <a href="http://bamru.blogspot.com" class="btn btn-primary">Read the BAMRU Blog</a>
 
-  <div class='span9'>
+    <% end %>
 
-    <div class='row'>
-      <div class='span9'>
+  <%= render :layout => 'alt_body' do %>
 
-        <iframe width="423" height="350" frameborder="0"
-                scrolling="no" marginheight="0" marginwidth="0"
-                src="http://maps.google.com/?q=http:%2F%2Fbamru.info%2F<%= @filename %>&amp;ie=UTF8&amp;ll=38.3904,-121.2232&amp;spn=3.855285,0.03265&amp;t=p&amp;output=embed">
-        </iframe>
+  <div class='row'>
+    <div class='span9'>
 
-      </div>
+      Here is our operations map.<br/>
+
+      <iframe width="423" height="350" frameborder="0"
+              scrolling="no" marginheight="0" marginwidth="0"
+              src="http://maps.google.com/?q=http:%2F%2Fbamru.info%2F<%= @filename %>&amp;ie=UTF8&amp;ll=38.3904,-121.2232&amp;spn=3.855285,0.03265&amp;t=p&amp;output=embed">
+      </iframe>
+
     </div>
   </div>
+  <% end %>
 </div>

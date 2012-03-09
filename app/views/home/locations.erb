@@ -1,24 +1,32 @@
-<div class="header_box"><div>Meeting Locations</div></div>
+<%= render :partial => 'alt_header', :locals => {:title => "Meeting Locations"} %>
 
-<div class="content">
+<div class='row'>
 
-  <a name="PeninsulaMeeting"></a>
-  <div class="capsblue ten_px">PENINSULA MEETING</div>
-  <div class="summary ten_px"><b>455 County Center, Redwood City, CA</b></div>
-  County Office Building, Room 101.
-  <a href="assets/mapredwoodcity2_large.gif">
-    <img alt="Peninsula Meeting Map" src="assets/mapredwoodcity2.gif"
-         style="border: 0px none ; width: 405px;">
-  </a>
-  <p/>
-  <a name="EastBayMeeting"></a>
-  <div class="capsblue ten_px">EAST BAY MEETING</div>
-  <div class="summary ten_px"><b>17930 Lake Chabot Road, Castro Valley</b></div>
-  Follow the driveway at 17930 to the classroom at the top of the hill.
-  <a href="assets/mapeastbay_large.gif">
-    <img alt="East Bay Meeting Map" src="assets/mapeastbay.gif"
-         style="border: 0px none ; width: 405px;">
-  </a>
+  <%= render :partial => 'alt_sidebar', :locals => {:image => "operations"} %>
 
+  <%= render :layout => 'alt_body' do %>
+
+    <div class="row">
+      <div class='span9'>
+
+        <a name="PeninsulaMeeting"></a>
+        <div>PENINSULA MEETING</div>
+        
+        <b>455 County Center, Redwood City, CA</b>
+        County Office Building, Room 101.
+        <img alt="Peninsula Meeting Map" 
+             src="images/assets/mapredwoodcity2.gif"
+             style="border: 0px none; width: 405px;">
+        <p></p>
+
+        <a name="EastBayMeeting"></a>
+        <div>EAST BAY MEETING</div>
+        <b>17930 Lake Chabot Road, Castro Valley</b>
+        Follow the driveway at 17930 to the classroom at the top of the hill.
+          <img alt="East Bay Meeting Map"
+               src="images/assets/mapeastbay.gif"
+               style="border: 0px none; width: 405px;">
+      </div>
+    </div>
+  <% end %>
 </div>
-

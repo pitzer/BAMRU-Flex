@@ -1,6 +1,6 @@
 module HomeHelper
 
-  BASE_DIR = File.dirname(File.expand_path(__FILE__)) + "/../.."
+  BASE_DIR = Rails.root.to_s
   DATA_DIR = BASE_DIR + "/data"
   QUOTES = YAML.load_file(BASE_DIR + "/data/quotes.yaml")
   RIGHT_NAV = YAML.load_file(BASE_DIR + "/data/right_nav.yaml")
@@ -121,11 +121,10 @@ module HomeHelper
   def quote
     index = rand(QUOTES.length)
     <<-HTML
-          <br/><p/>
-          <img src="assets/axe.gif" border="0">
+          <img src="images/axe.gif" border="0"/>
           <div class='quote_box'>
             <div class='quote'>"#{QUOTES[index][:text]}"</div>
-            <div class='caps'>- #{QUOTES[index][:auth]}</div>
+            <div class='auth'>- #{QUOTES[index][:auth]}</div>
           </div>
     HTML
   end
@@ -178,7 +177,7 @@ module HomeHelper
         <span class="news10"> <font color="#888888">#{event.location}<br>
         #{event.date_display(true)}<br>      Leaders: #{event.leaders}<br><br></font></span>
     #{event.description}<br>
-    <font class="caps"><img src="assets/dots.gif" width="134" height="10"></font></p>
+    <font class="caps"><img src="images/assets/dots.gif" width="134" height="10"></font></p>
 
     ERB
   end
