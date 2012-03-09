@@ -104,8 +104,7 @@ historyOptions =
 
 $(document).ready ->
   $('#associates').tooltip(associatesOptions) unless window.touchDevice()
-  $('#history').tooltip(historyOptions)       :qa!
-  unless window.touchDevice()
+  $('#history').tooltip(historyOptions)       unless window.touchDevice()
   formatDisplay()
   setDebugWidth(window.innerWidth)
   $(window).resize ->
