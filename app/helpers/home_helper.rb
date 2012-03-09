@@ -378,7 +378,7 @@ module HomeHelper
   end
 
   def dot_hr
-    '<img src="assets/dots.gif" width="134" height="10" border="0"><br>'
+    '<img src="images/assets/dots.gif" width="134" height="10" border="0"><br>'
   end
 
   def geo_start(action)
