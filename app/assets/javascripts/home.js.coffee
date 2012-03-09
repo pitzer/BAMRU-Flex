@@ -51,12 +51,19 @@ formatDisplay = ->
   alignText('center')
   removeBreaks()
 
-hoverOptions =
+associatesOptions =
   placement: 'left'
-  title: "BAMRU is a resource of the San Mateo County Sheriff's Office of Emergency Services, and a proud member of the Mountain Rescue Association (MRA)."
+  animation: false
+  title: "We are a San Mateo County Sheriff's resource, and Mountain Rescue Association member."
+
+historyOptions =
+  placement: 'right'
+  animation: false
+  title: "BAMRU is the oldest Mountain Rescue Team in California."
 
 $(document).ready ->
-  $('#associates').tooltip(hoverOptions)
+  $('#associates').tooltip(associatesOptions)
+  $('#history').tooltip(historyOptions)
   formatDisplay()
   setDebugWidth(window.innerWidth)
   $(window).resize ->
