@@ -5,6 +5,7 @@ log/*.log
 !/tmp/restart.txt
 .idea
 _archive
-vendor/cache
-vendor/cache/*
 .vagrant
+vendor/ruby
+bin
+bin/*

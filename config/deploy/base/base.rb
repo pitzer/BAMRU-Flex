@@ -14,4 +14,6 @@ after "deploy", "deploy:cleanup" # keep only the last 5 releases
 require "bundler/capistrano"
 set :bundle_flags, "--deployment --quiet --binstubs --shebang ruby-local-exec"
 
+# also see http://ryan.mcgeary.org/2011/02/09/vendor-everything-still-applies/
+
 
