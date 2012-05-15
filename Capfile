@@ -1,14 +1,18 @@
-PRIMARY      = "flex.bamru.info"
-#BACKUP       = "backup.bamru.info"
-#PRIMARY      = "primary"
-#BACKUP       = "backup"
+# ====== Deployment Stages =====
+set :stages,        %w(vagrant production)
+set :default_stage, "vagrant"
 
-APPDIR       = "BAMRU-Flex"
-
+# ===== App Config =====
 set :application, "BAMRU-Flex"
+set :user,        "vagrant"
+set :repository,  "https://github.com/andyl/#{application}.git"
 
-load 'deploy' if respond_to?(:namespace)
-Dir['vendor/plugins/*/recipes/*.rb'].each { |p| load p }
-Dir['lib/shared/recipes/*.rb'].each { |p| load p }
+# ===== Stage-Specific Code (config/deploy/<stage>) =====
+require 'capistrano/ext/multistage'
 
+# ===== Common Code for All Stages =====
+load 'deploy'
+load 'deploy/assets'
 
+Dir['config/deploy/base/*.rb'].each { |p| load p }
+Dir['config/deploy/recipes/*.rb'].each { |p| load p }

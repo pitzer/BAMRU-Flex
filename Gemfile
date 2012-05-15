@@ -1,57 +1,44 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
-gem 'rails', '3.2.1'
-
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
-
+gem 'rails', '3.2.3'
 gem 'sqlite3'
-
 gem 'simple_form'
 
-gem 'hirb'
-gem 'interactive_editor'
-gem 'drx'
-gem 'awesome_print'
-gem 'wirble'
+gem 'fastercsv'
+gem 'gcal4ruby'
+gem 'daemons'
+gem 'whenever'
+gem 'thor'
 
-gem "fastercsv"
-gem "gcal4ruby"
-# gem "rack"
-# gem "rack-flash"
-gem "daemons"
-gem "whenever"
-gem "thor"
+gem 'foreman'
+gem 'passenger'
+gem 'jquery-rails'
+gem 'bcrypt-ruby', '~> 3.0.0' # for ActiveModel has_secure_password
 
-# Gems used only for assets and not required
-# in production environments by default.
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
 
   gem 'twitter-bootstrap-rails'
 
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer'
-
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'jquery-rails'
+group :development, :test do
+  gem 'virtualbox'
+  gem 'vagrant',      '~> 1.0.2'
+  gem 'vagrant-snap'
 
-gem 'rspec-rails'
+  gem 'rspec-rails'
 
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+  gem 'capistrano'
+  gem 'capistrano_colors'
 
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
+  gem 'debugger'
 
-# Use unicorn as the web server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-gem 'capistrano'
-
-# To use debugger
-#gem 'ruby-debug19', :require => 'ruby-debug'
+  gem 'hirb'
+  gem 'interactive_editor'
+  gem 'drx'
+  gem 'awesome_print'
+  gem 'wirble'
+end
