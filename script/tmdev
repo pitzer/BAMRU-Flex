@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+tmux has-session -t dev
+if [ $? != 0 ]
+then
+  tmux new-session -s dev -n bash -d
+
+  tmux new-window -t dev -n foreman 
+
+  tmux new-window -t dev -n sysmon
+  tmux send-keys -t dev:3 'htop' C-m
+  tmux split-window -t dev -v
+  tmux send-keys -t dev:3.1 'tail -f /var/log/syslog' C-m
+
+  tmux select-window -t dev:1
+fi
+
+tmux attach -t dev
