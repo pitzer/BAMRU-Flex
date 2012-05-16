@@ -1,7 +1,17 @@
-def template(from, to, sudo = "")
-  erb = File.read(File.expand_path("../templates/#{from}", __FILE__))
-  put ERB.new(erb).result(binding), "/tmp/_filetransfer"
+require 'erb'
+
+def render(from)
+  erb = File.read(File.expand_path("./packages/templates/#{from}", File.dirname(__FILE__)))
+  ERB.new(erb).result(binding)
+end
+
+def sudo_template(from, to)
+  put render(from), "/tmp/_filetransfer"
   run "#{sudo} mv /tmp/_filetransfer #{to}"
+end
+
+def template(from, to)
+  put render(from), to
 end
 
 def set_default(name, *args, &block)
@@ -10,4 +20,8 @@ end
 
 def get_host
   capture("echo $CAPISTRANO:HOST$").strip
+end
+
+def remote_file_exists?(full_path)
+  'true' ==  capture("if [ -e #{full_path} ]; then echo 'true'; fi").strip
 end

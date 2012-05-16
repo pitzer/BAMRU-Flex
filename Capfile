@@ -3,9 +3,12 @@ set :stages,        %w(vagrant production)
 set :default_stage, "vagrant"
 
 # ===== App Config =====
-set :application, "BAMRU-Flex"
 set :user,        "vagrant"
+set :application, "BAMRU-Flex"
+set :app_name,    "flex"
 set :repository,  "https://github.com/andyl/#{application}.git"
+set :vhost_names, %w(flex.bamru.info www.flex.bamru.info flex)
+set :web_port,    6000
 
 # ===== Stage-Specific Code (config/deploy/<stage>) =====
 require 'capistrano/ext/multistage'

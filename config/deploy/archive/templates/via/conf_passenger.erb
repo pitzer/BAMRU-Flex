@@ -1,0 +1,22 @@
+# vi: set ft=nginx :
+
+<% if port == "unix_socket" -%>
+upstream <%= app_name %>_upstream { 
+  server unix:/tmp/<%= app_name %>.socket;
+}
+<% end -%>
+
+server {
+  listen 80;
+  server_name <%= [0..vhosts.length-1].map {|x| vhosts[x]}.join(' ') %>;
+  root <%= root_dir %>/current/public;
+  location / {
+  <% if port == "unix_socket" -%>
+    proxy_pass http://<%= app_name %>_upstream;
+  <% else -%>
+    proxy_pass http://127.0.0.1:<%= port %>;
+  <% end -%>
+    proxy_set_header Host $host;
+  }
+}
+

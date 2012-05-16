@@ -1,2 +1,2 @@
-server 'apek', :app, :web, :primary => true
+server 'apek', :app, :web, :db, :primary => true
 

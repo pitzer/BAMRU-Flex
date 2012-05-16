@@ -1,19 +1,5 @@
 namespace :depxt do
 
-  desc "Deploy #{application}"
-  deploy.task :restart do
-    run "touch #{current_path}/tmp/restart.txt"
-  end
-
-  desc "Update gem installation."
-  task :update_gems do
-    current_host = get_host
-    puts "C"
-    system "bundle pack"
-    system "cd vendor ; rsync -a --delete cache #{current_host}:a/#{appdir}/shared"
-    run "cd #{release_path} ; bundle install --quiet --local --path=/home/aleak/.gems"
-  end
-
   desc "RUN THIS FIRST!"
   task :first_deploy do
     check_for_passenger
@@ -28,9 +14,9 @@ namespace :depxt do
     puts "READY TO RUN on #{current_host}"
   end
 
-  after :deploy, :update_gems, :setup_shared_cache, :setup_primary, :setup_backup
-  after "deploy:symlink", :reset_cron, :link_shared
-  after :nginx_conf, :restart_nginx
+  #after :deploy, :update_gems, :setup_shared_cache, :setup_primary, :setup_backup
+  #after "deploy:symlink", :reset_cron, :link_shared
+  #after :nginx_conf, :restart_nginx
 
   desc "Reset Cron"
   task :reset_cron do
@@ -68,58 +54,6 @@ namespace :depxt do
     run "mv #{release_path}/data/shared #{release_path}/data/shared_save"
     run "ln -s #{shared_path}/data #{release_path}/data/shared"
     run "touch #{release_path}/tmp/restart.txt"
-  end
-
-  desc "Restart NGINX."
-  task :restart_nginx do
-    sudo "/etc/init.d/nginx restart"
-  end
-
-  desc "Setup Primary site."
-  task :setup_primary, :roles => [:primary] do
-    #if defined?(PRIMARY)
-    #  run "cd #{current_path} ; bundle exec rake set_primary_role"
-    #  url = defined?(BACKUP) ? "http://#{BACKUP}" : ""
-    #  run "cd #{current_path} ; bundle exec rake set_peer PEER_URL=#{url}"
-    #end
-  end
-
-  desc "Setup Backup site."
-  task :setup_backup, :roles => [:backup] do
-    if defined?(BACKUP)
-      run "cd #{current_path} ; bundle exec rake set_backup_role"
-      url = defined?(PRIMARY) ? "http://#{PRIMARY}" : ""
-      run "cd #{current_path} ; bundle exec rake set_peer PEER_URL=#{url}"
-    end
-  end
-
-  def remote_file_exists?(full_path)
-    'true' ==  capture("if [ -e #{full_path} ]; then echo 'true'; fi").strip
-  end
-
-  namespace :check do
-    desc "Make sure local git is in sync with remote."
-    task :revision, roles: :web do
-      unless `git rev-parse HEAD` == `git rev-parse origin/#{branch}`
-        puts "WARNING: HEAD is not the same as origin/#{branch}"
-        puts "Run `git push` to sync changes."
-        exit
-      end
-    end
-    before "deploy", "depxt:check:revision"
-    before "deploy:migrations", "depxt:check:revision"
-    before "deploy:cold", "depxt:check:revision"
-  end
-
-  task :check_for_passenger do
-    current_host = get_host
-    error_msg = <<-EOF
-
-    ABORT: PLEASE INSTALL PASSENGER, THEN TRY AGAIN !!!
-    sys sw install:passenger host=#{current_host}
-
-    EOF
-    abort error_msg unless remote_file_exists?("/etc/init.d/nginx")
   end
 
 end

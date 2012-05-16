@@ -1,0 +1,44 @@
+# Nginx Module#
+
+## Overview ##
+
+This is a module for installing and configuring nginx.
+
+The 'nginx' Class performs system-wide installation.
+
+Defines are used to create vhost/application configurations.
+
+APP TYPE  Define                 App Overview
+---------------------------------------------------------
+STATIC    'ngapp::static'    HTTP Static files 
+PHP       'ngapp::php'       PHP app using PHP-FPM 
+PASSENGER 'ngapp::passenger' Ruby/Rack apps using Passenger-Standalone 
+UNICORN   'ngapp::unicorn'   Ruby/Rack apps using Unicorn 
+
+## Usage ##
+
+To use:
+- run the 'nginx' Class once per server
+- create & config a user account using 'ngusr'
+- run the appropriate 'ngvac::*' Define once per app
+
+Sample Usage :
+
+        include nginx
+        
+        ngusr { 'deploy' : } 
+
+        ngapp::php { "default" :
+          root         => "/var/www/nginx-default",
+          fastcgi_pass => "127.0.0.1:9000",
+          server_name  => ["localhost", "$hostname", "$fqdn"],
+         }
+
+        ngapp::passenger { "default-ssl" :
+          listen       => "443",
+          root         => "/var/www/nginx-default",
+          fastcgi_pass => "127.0.0.1:9000",
+          server_name  => "$fqdn",
+        }
+
+See the test setups for more usage examples.

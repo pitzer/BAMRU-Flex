@@ -10,6 +10,8 @@ gem 'daemons'
 gem 'whenever'
 gem 'thor'
 
+gem 'ghost'
+
 gem 'foreman'
 gem 'passenger'
 gem 'jquery-rails'

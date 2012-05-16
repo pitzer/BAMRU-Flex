@@ -1,0 +1,19 @@
+# vi: set ft=nginx :
+
+server {
+  listen 80;
+  server_name <%= [0..server_names.length-1].map {|x| server_names[x]}.join(' ') %>;
+  root <%= root_dir %>;
+  index index.php;
+
+  location / {
+    try_files $uri /index.php;
+  }
+
+  location ~ \.php$ {
+    fastcgi_pass 127.0.0.1:9000;
+    fastcgi_index index.php;
+    include fastcgi_params;
+  }
+}
+

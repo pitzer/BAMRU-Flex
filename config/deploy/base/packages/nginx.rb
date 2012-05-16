@@ -1,26 +1,16 @@
-
+after "deploy:update", "nginx:export_conf"
 
 namespace :nginx do
-  desc "Install latest stable release of nginx"
-  task :install, roles: :web do
-    run "#{sudo} add-apt-repository ppa:nginx/stable"
-    run "#{sudo} apt-get -y update"
-    run "#{sudo} apt-get -y install nginx"
-  end
-  after "deploy:install", "nginx:install"
 
-  desc "Setup nginx configuration for this application"
-  task :setup, roles: :web do
-    template "nginx_unicorn.erb", "/etc/nginx/sites-enabled/#{application}", sudo
-    run "#{sudo} rm -f /etc/nginx/sites-enabled/default"
-    restart
+  desc "Export an nginx config file."
+  task :export_conf, :role => :web do
+    template "nginx_passenger.erb", "/etc/nginx/conf.d/#{app_name}.conf"
   end
-  after "deploy:setup", "nginx:setup"
-  
-  %w[start stop restart].each do |command|
+
+  %w[start stop status restart reload].each do |command|
     desc "#{command} nginx"
     task command, roles: :web do
-      run "#{sudo} service nginx #{command}"
+      run "#{sudo} /etc/init.d/nginx #{command}"
     end
   end
 end
