@@ -19,3 +19,4 @@ load 'deploy/assets'
 
 Dir['config/deploy/base/*.rb'].each { |p| load p }
 Dir['config/deploy/recipes/*.rb'].each { |p| load p }
+
