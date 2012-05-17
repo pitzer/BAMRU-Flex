@@ -9,7 +9,8 @@ Vagrant::Config.run do |config|
   config.vm.define App do |box_config|
     box_config.vm.customize ["modifyvm", :id, "--name", App.to_s.capitalize]
     box_config.vm.host_name = App.to_s.capitalize
-    box_config.vm.network      :hostonly,   "192.168.33.10"
+    # box_config.vm.network      :hostonly,   "192.168.33.10"
+    box_config.vm.network      :bridged
     box_config.vm.forward_port 3000, 3001
     box_config.vm.forward_port 8989, 8989
     box_config.vm.provision :shell do |shell|

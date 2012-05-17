@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+tmux has-session -t flex
+if [ $? != 0 ]
+then
+
+  tmux new-session -s flex -n sysmon -d
+
+  tmux split-window -t flex:1 -v
+  tmux split-window -t flex:1 -h
+  tmux send-keys -t flex:1.1 'htop'  C-m
+  tmux send-keys -t flex:1.2 'sudo iotop' C-m
+  tmux send-keys -t flex:1.3 'sudo iftop' C-m
+
+  tmux new-window  -t flex -n syslog
+  tmux send-keys -t flex:2 'multitail /var/log/nginx/access.log' C-m
+  tmux send-keys -t flex:2 'multitail /var/log/nginx/error.log' C-m
+  tmux send-keys -t flex:2 'multitail /var/log/syslog' C-m
+
+  tmux new-window  -t flex -n applog
+
+  tmux select-window -t flex:1
+
+fi
+
+tmux attach -t flex
