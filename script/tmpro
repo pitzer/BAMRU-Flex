@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-tmux has-session -t flex
+tmux has-session -t flex 2> /dev/null
 
 # create a new session if none exists
 if [ $? != 0 ] ; then
@@ -26,7 +26,10 @@ fi
 count=`tmux list-clients | grep flex | wc -l`
 
 # if there are no clients, then attach directly to the session
-[ $count == 0 ] && tm attach -t flex && exit 0
+if [ $count == 0 ] ; then
+  tmux attach -t flex
+  exit $?
+fi
 
 # if there are attached clients, then attach using a Grouped
 # Session (this enabled different clients to view different pages)
@@ -34,9 +37,11 @@ while [ true ] ; do # loop until an available client-id is found...
   client_count=`tmux list-clients | grep flex$count | wc -l`
   session_count=`tmux list-sessions | grep flex$count | wc -l`
   if [ $client_count == 0 ] ; then
-    [ $session_count != ] && tmux kill-session -t flex$count
-    tmux new-session -t flex -s flex$count
-    exit 0
+    [ $session_count != 0 ] && tmux kill-session -t flex$count
+    tmux new-session -t flex -s flex$count -d
+    tmux select-window -t flex$count:1
+    tmux attach -t flex$count
+    exit $? 
   fi
-  count=$count+1
+  count=`expr $count + 1`
 done
