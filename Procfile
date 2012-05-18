@@ -1,1 +1,1 @@
-web: bin/passenger start
+web: bin/passenger start -p $PORT
