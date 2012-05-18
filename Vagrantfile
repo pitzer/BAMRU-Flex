@@ -13,6 +13,7 @@ Vagrant::Config.run do |config|
     box_config.vm.network      :bridged
     box_config.vm.forward_port 3000, 3001
     box_config.vm.forward_port 8989, 8989
+    box_config.vm.customize ["modifyvm", :id, "--memory", 750]
     box_config.vm.provision :shell do |shell|
       shell.args = "vagrant --proceed"
       shell.path = "~/util/base_util/bin/bootstrap.sh"
