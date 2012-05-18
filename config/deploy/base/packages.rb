@@ -1,5 +1,6 @@
 # use this file to indicate which packages should be used
 
+load "config/deploy/base/packages/nginx"
 load "config/deploy/base/packages/foreman"
 
 #load "config/recipes/nginx"
