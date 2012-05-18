@@ -1,6 +1,6 @@
 # vi: set ft=ruby :
 
-App    = :flex
+App    = :flux
 
 Vagrant::Config.run do |config|
   config.vm.box     = "lucid32"

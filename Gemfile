@@ -33,14 +33,20 @@ group :development, :test do
 
   gem 'rspec-rails'
 
-  gem 'capistrano'
-  gem 'capistrano_colors'
-
+  gem 'pry'
+  gem 'pry-doc'
   gem 'debugger'
-
-  gem 'hirb'
   gem 'interactive_editor'
-  gem 'drx'
   gem 'awesome_print'
   gem 'wirble'
+  gem 'hirb'
+  gem 'drx'
+
+  gem 'capistrano'
+  share_dir = File.expand_path("~/lr/cap_share")
+  if Dir.exist?(share_dir) 
+    gem 'cap_share', :path => share_dir
+  else
+    gem 'cap_share', :git => "https://andyl@github.com/andyl/cap_share.git"
+  end
 end

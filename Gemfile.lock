@@ -1,3 +1,9 @@
+PATH
+  remote: /home/aleak/lr/cap_share
+  specs:
+    cap_share (0.0.1)
+      capistrano_colors
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -43,6 +49,7 @@ GEM
     childprocess (0.3.2)
       ffi (~> 1.0.6)
     chronic (0.6.7)
+    coderay (1.0.6)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
@@ -99,6 +106,7 @@ GEM
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    method_source (0.7.1)
     mime-types (1.18)
     multi_json (1.3.2)
     net-scp (1.0.4)
@@ -114,6 +122,13 @@ GEM
       rack
       rake (>= 0.8.1)
     polyglot (0.3.3)
+    pry (0.9.9.6)
+      coderay (~> 1.0.5)
+      method_source (~> 0.7.1)
+      slop (>= 2.4.4, < 3)
+    pry-doc (0.4.2)
+      pry (>= 0.9.0)
+      yard (~> 0.8.1)
     rack (1.4.1)
     rack-cache (1.2)
       rack (>= 0.4)
@@ -160,6 +175,7 @@ GEM
     simple_form (2.0.1)
       actionpack (~> 3.0)
       activemodel (~> 3.0)
+    slop (2.4.4)
     spoon (0.0.1)
     sprockets (2.1.2)
       hike (~> 1.2)
@@ -199,6 +215,7 @@ GEM
       activesupport (>= 2.3.4)
       chronic (~> 0.6.3)
     wirble (0.1.3)
+    yard (0.8.1)
 
 PLATFORMS
   ruby
@@ -206,8 +223,8 @@ PLATFORMS
 DEPENDENCIES
   awesome_print
   bcrypt-ruby (~> 3.0.0)
+  cap_share!
   capistrano
-  capistrano_colors
   coffee-rails (~> 3.2.1)
   daemons
   debugger
@@ -220,6 +237,8 @@ DEPENDENCIES
   interactive_editor
   jquery-rails
   passenger
+  pry
+  pry-doc
   rails (= 3.2.3)
   rspec-rails
   sass-rails (~> 3.2.3)

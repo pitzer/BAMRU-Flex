@@ -1,9 +1,0 @@
-# vi: set ft=nginx :
-
-server {
-  listen 80;
-  server_name <%= [0..vhosts.length-1].map {|x| vhosts[x]}.join(' ') %>;
-  root <%= root_dir %>/current;
-  index index.html;
-}
-

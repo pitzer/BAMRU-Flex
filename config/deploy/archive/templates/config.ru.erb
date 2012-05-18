@@ -1,6 +1,0 @@
-# Hello World Rack App
-
-string = "Hello World - AppType: Passenger / AppName: <%= app_name %> / DeployUser: <%= duser %>\n"
-
-run lambda { |env| [200, {'Content-Type' => 'text/plain'}, StringIO.new(string)]}
-
