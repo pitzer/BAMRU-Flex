@@ -7,7 +7,7 @@ set :user,        "vagrant"
 set :application, "BAMRU-Flex"
 set :app_name,    "flex"
 set :repository,  "https://github.com/andyl/#{application}.git"
-set :vhost_names, %w(flex.bamru.info www.flex.bamru.info flex)
+set :vhost_names, %w(flex.bamru.info www.flex.bamru.info)
 set :web_port,    9000
 
 # ===== Stage-Specific Code (config/deploy/<stage>) =====
