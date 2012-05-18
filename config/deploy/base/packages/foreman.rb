@@ -4,7 +4,7 @@ after 'deploy:update', 'foreman:restart'
 namespace :foreman do
   desc "Export the Procfile to Ubuntu's upstart scripts"
   task :export, :roles => :app do
-    run "#{sudo} rm /etc/init/#{app_name}*.conf"
+    run "#{sudo} rm -f /etc/init/#{app_name}*.conf"
     run "cd #{release_path} && #{sudo} foreman export upstart /etc/init -a #{app_name} -u #{user} -l #{shared_path}/log"
   end
   desc "Start the application services"

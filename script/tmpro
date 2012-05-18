@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # should be called from tmux_console
 
-export APP="$APP-pro"
+export APP="flex-pro"
 
 create_new_session()
 {
