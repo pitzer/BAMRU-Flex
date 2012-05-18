@@ -18,7 +18,7 @@ create_new_session()
   tmux send-keys -t $APP:2 'multitail /var/log/nginx/access.log /var/log/nginx/error.log' C-m
 
   tmux new-window  -t $APP -n applog
-  tmux send-keys -t $APP:3 'multitail $ABS_SRC_DIR/../log/*' C-m
+  tmux send-keys -t $APP:3 "multitail $ABS_SRC_DIR/../log/*" C-m
 
   tmux new-window  -t $APP -n syslinks
   tmux send-keys -t $APP:4 'syslinks'  C-m
