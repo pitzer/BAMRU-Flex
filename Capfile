@@ -1,3 +1,6 @@
+require 'rubygems'
+require 'bundler/setup'
+
 # ====== Deployment Stages =====
 set :stages,        %w(vagrant production)
 set :default_stage, "vagrant"
@@ -16,7 +19,15 @@ require 'capistrano/ext/multistage'
 # ===== Common Code for All Stages =====
 load 'deploy'
 load 'deploy/assets'
+require 'cap_share'
 
-Dir['config/deploy/base/*.rb'].each { |p| load p }
-Dir['config/deploy/recipes/*.rb'].each { |p| load p }
+# ===== Package Definitions =====
+require "cap_share/packages/nginx"
+require "cap_share/packages/foreman"
+
+#load "cap_share/packages/postgresql"
+#load "cap_share/packages/unicorn"
+#load "cap_share/packages/nodejs"
+#load "cap_share/packages/rbenv"
+#load "cap_share/packages/check"
 

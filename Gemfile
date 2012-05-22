@@ -11,6 +11,7 @@ gem 'whenever'
 gem 'thor'
 
 gem 'ghost'
+gem 'valkyrie'
 
 gem 'foreman'
 gem 'passenger'
@@ -42,6 +43,7 @@ group :development, :test do
   gem 'hirb'
   gem 'drx'
 
+  gem 'net-ssh', '2.2.2'
   gem 'capistrano'
   share_dir = File.expand_path("~/lr/cap_share")
   if Dir.exist?(share_dir) 
