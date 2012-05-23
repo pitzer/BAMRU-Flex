@@ -19,12 +19,7 @@ require 'capistrano/ext/multistage'
 # ===== Common Code for All Stages =====
 load 'deploy'
 load 'deploy/assets'
-# require 'debugger' ; debugger
-cap_share_dir = File.expand_path("~/lr/cap_share/lib")
-if Dir.exist?(cap_share_dir)
-  $LOAD_PATH << cap_share_dir
-  require 'cap_share'
-end
+require 'cap_share'
 
 # ===== Package Definitions =====
 require "cap_share/packages/nginx"

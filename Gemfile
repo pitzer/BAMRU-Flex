@@ -45,5 +45,5 @@ group :development, :test do
 
   gem 'net-ssh', '2.2.2'
   gem 'capistrano'
-  gem 'capistrano_colors'
+  gem 'cap_share', :path => "lib/cap_share"
 end
