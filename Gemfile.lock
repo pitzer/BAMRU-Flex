@@ -1,3 +1,9 @@
+PATH
+  remote: lib/cap_share
+  specs:
+    cap_share (0.0.1)
+      capistrano_colors
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -220,8 +226,8 @@ PLATFORMS
 DEPENDENCIES
   awesome_print
   bcrypt-ruby (~> 3.0.0)
+  cap_share!
   capistrano
-  capistrano_colors
   coffee-rails (~> 3.2.1)
   daemons
   debugger
