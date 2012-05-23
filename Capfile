@@ -20,13 +20,12 @@ require 'capistrano/ext/multistage'
 load 'deploy'
 load 'deploy/assets'
 base_dir = File.expand_path(File.dirname(__FILE__))
-Dir.glob("config/deploy/base/*.rb").each {|f| require base_dir + '/' + f}
-Dir.glob("config/deploy/recipes/*.rb").each {|f| require base_dir + '/' + f}
+Dir.glob("config/deploy/shared/base/*.rb").each {|f| require base_dir + '/' + f}
+Dir.glob("config/deploy/shared/recipes/*.rb").each {|f| require base_dir + '/' + f}
 
 # ===== Package Definitions =====
-require base_dir + "/config/deploy/packages/nginx"
-require base_dir + "/config/deploy/packages/foreman"
-
+require base_dir + "/config/deploy/shared/packages/nginx"
+require base_dir + "/config/deploy/shared/packages/foreman"
 
 #load "cap_share/packages/postgresql"
 #load "cap_share/packages/unicorn"
