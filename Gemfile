@@ -45,10 +45,5 @@ group :development, :test do
 
   gem 'net-ssh', '2.2.2'
   gem 'capistrano'
-  share_dir = File.expand_path("~/lr/cap_share")
-  if Dir.exist?(share_dir) 
-    gem 'cap_share', :path => share_dir
-  else
-    gem 'cap_share', :git => "https://andyl@github.com/andyl/cap_share.git"
-  end
+  gem 'capistrano_colors'
 end
