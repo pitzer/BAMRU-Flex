@@ -19,11 +19,14 @@ require 'capistrano/ext/multistage'
 # ===== Common Code for All Stages =====
 load 'deploy'
 load 'deploy/assets'
+tgt_dir = File.expand_path("lib/cap_share/lib", File.dirname(__FILE__))
+$LOAD_PATH << tgt_dir
 require 'cap_share'
 
 # ===== Package Definitions =====
 require "cap_share/packages/nginx"
 require "cap_share/packages/foreman"
+
 
 #load "cap_share/packages/postgresql"
 #load "cap_share/packages/unicorn"
