@@ -19,13 +19,13 @@ require 'capistrano/ext/multistage'
 # ===== Common Code for All Stages =====
 load 'deploy'
 load 'deploy/assets'
-tgt_dir = File.expand_path("lib/cap_share/lib", File.dirname(__FILE__))
-$LOAD_PATH << tgt_dir
-require 'cap_share'
+base_dir = File.expand_path(File.dirname(__FILE__))
+Dir.glob("config/deploy/base/*.rb").each {|f| require base_dir + '/' + f}
+Dir.glob("config/deploy/recipes/*.rb").each {|f| require base_dir + '/' + f}
 
 # ===== Package Definitions =====
-require "cap_share/packages/nginx"
-require "cap_share/packages/foreman"
+require base_dir + "/config/deploy/packages/nginx"
+require base_dir + "/config/deploy/packages/foreman"
 
 
 #load "cap_share/packages/postgresql"
