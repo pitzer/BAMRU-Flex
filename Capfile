@@ -27,6 +27,7 @@ Dir.glob("config/deploy/shared/recipes/*.rb").each {|f| require base_dir + '/' +
 # ===== Package Definitions =====
 require base_dir + "/config/deploy/shared/packages/nginx"
 require base_dir + "/config/deploy/shared/packages/foreman"
+require base_dir + "/config/deploy/shared/packages/sqlite"
 
 #load "cap_share/packages/postgresql"
 #load "cap_share/packages/unicorn"

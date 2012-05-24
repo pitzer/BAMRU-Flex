@@ -13,7 +13,7 @@ create_new_session()
   tmux split-window -t $APP:1 -v
   tmux split-window -t $APP:1 -h
   tmux send-keys -t $APP:1.1 'htop'  C-m
-  tmux send-keys -t $APP:1.2 'syslinks' C-m
+  tmux send-keys -t $APP:1.2 'cls && syslinks' C-m
   tmux send-keys -t $APP:1.3 'sudo iftop' C-m
 
   tmux new-window  -t $APP -n weblog
