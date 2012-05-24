@@ -2,12 +2,12 @@ require 'rubygems'
 require 'bundler/setup'
 
 # ====== Deployment Stages =====
-set :stages,        %w(vagrant production)
-set :default_stage, "vagrant"
+set :stages,        %w(staging production)
+set :default_stage, "staging"
 
 # ===== App Config =====
-set :user,        "vagrant"
 set :application, "BAMRU-Flex"
+set :user,        "aleak"
 set :app_name,    "flex"
 set :repository,  "https://github.com/andyl/#{application}.git"
 set :vhost_names, %w(flextest)
