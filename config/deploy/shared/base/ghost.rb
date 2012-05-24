@@ -28,11 +28,11 @@ Capistrano::Configuration.instance(:must_exist).load do
     desc "Update /etc/hosts on remote machines using ghost"
     task :remote do
       vhost_names.each do |name|
-        run "cd #{previous_release} && #{sudo} ghost delete #{name}"
-        run "cd #{previous_release} && #{sudo} ghost add    #{name} 127.0.0.1"
+        run "cd #{previous_release} && rbenvsudo ghost delete #{name}"
+        run "cd #{previous_release} && rbenvsudo ghost add    #{name} 127.0.0.1"
       end
-      run "cd #{previous_release} && #{sudo} ghost delete #{app_name}"
-      run "cd #{previous_release} && #{sudo} ghost add    #{app_name} 127.0.0.1"
+      run "cd #{previous_release} && rbenvsudo ghost delete #{app_name}"
+      run "cd #{previous_release} && rbenvsudo ghost add    #{app_name} 127.0.0.1"
     end
 
     desc "Update /etc/hosts on #{`hostname`.chomp} using ghost"

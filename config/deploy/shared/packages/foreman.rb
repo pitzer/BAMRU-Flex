@@ -8,8 +8,8 @@ Capistrano::Configuration.instance(:must_exist).load do
     task :export, :roles => :app do
       run "#{sudo} rm -f /etc/init/#{app_name}*.conf"
       run "cd #{release_path} && foreman export upstart /tmp/xinit -p #{web_port} -a #{app_name} -u #{user} -l #{shared_path}/log"
-      run "#{sudo} mv /tmp/xinit /etc/init"
-      run "rm -r /tmp/xinit"
+      run "#{sudo} mv /tmp/xinit/* /etc/init"
+      run "rm -rf /tmp/xinit"
     end
     desc "Start the application services"
     task :start, :roles => :app do
