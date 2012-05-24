@@ -1,4 +1,4 @@
-set :proxy, "vv1"
+set :proxy, "flux"
 server proxy, :app, :web, :db, :primary => true
 
 # setup vhost names in /etc/hosts

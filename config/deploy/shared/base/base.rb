@@ -18,4 +18,12 @@ Capistrano::Configuration.instance(:must_exist).load do
 
   # also see http://ryan.mcgeary.org/2011/02/09/vendor-everything-still-applies/
 
+
+  # ---------------------------------------------------------------------------------
+  # get sudo password at the beginning of the run
+  task :sudo_setup, :roles => app do
+    run "#{sudo} date"
+  end
+  before "deploy", "sudo_setup"
+
 end
