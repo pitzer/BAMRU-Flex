@@ -21,7 +21,7 @@ Capistrano::Configuration.instance(:must_exist).load do
 
   # ---------------------------------------------------------------------------------
   # get sudo password at the beginning of the run
-  task :sudo_setup, :roles => app do
+  task :sudo_setup, :roles => :app do
     run "#{sudo} date"
   end
   before "deploy", "sudo_setup"

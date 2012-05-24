@@ -25,29 +25,20 @@ Capistrano::Configuration.instance(:must_exist).load do
 
   namespace :ghost do
 
-    desc "RBENVSUDO TEST"
-    task :rbtst do
-      run "bash -c 'source .bashrc ;rbenvsudo ghost'"
-    end
-
     desc "Update /etc/hosts on remote machines using ghost"
     task :remote do
       vhost_names.each do |name|
-        run "bash -c 'source .bashrc ; cd #{previous_release} ; rbenvsudo ghost delete #{name}'"
-        run "bash -c 'source .bashrc ; cd #{previous_release} ; rbenvsudo ghost add    #{name} 127.0.0.1'"
+        run "cd #{deploy_to}/current ; #{sudo} -E ghost modify #{name} 127.0.0.1"
       end
-      run "bash -c 'source .bashrc ; cd #{previous_release} ; rbenvsudo ghost delete #{app_name}'"
-      run "bash -c 'source .bashrc ; cd #{previous_release} ; rbenvsudo ghost add    #{app_name} 127.0.0.1'"
+      run "cd #{deploy_to}/current ; #{sudo} -E ghost modify #{app_name} 127.0.0.1"
     end
 
     desc "Update /etc/hosts on #{`hostname`.chomp} using ghost"
     task :local do
       vhost_names.each do |name|
-        system "rbenvsudo ghost delete #{name}"
-        system "rbenvsudo ghost add    #{name} #{proxy}"
+        system "rbenvsudo ghost modify #{name} #{proxy}"
       end
-      system "rbenvsudo ghost delete #{app_name}"
-      system "rbenvsudo ghost add    #{app_name} #{proxy}"
+      system "rbenvsudo ghost modify #{app_name} #{proxy}"
     end
 
   end
