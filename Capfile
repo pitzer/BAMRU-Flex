@@ -4,8 +4,8 @@ require 'bundler/setup'
 # ====== Deployment Stages =====
 set :stages,        %w(staging production)
 set :default_stage, "staging"
-set :user,          "aleak"
-set :proxy,         "vv1"
+set :user,          "vagrant"
+set :proxy,         "flux"
 
 # ===== App Config =====
 set :application, "BAMRU-Flex"
@@ -28,10 +28,4 @@ Dir.glob("config/deploy/shared/recipes/*.rb").each {|f| require base_dir + '/' +
 require base_dir + "/config/deploy/shared/packages/nginx"
 require base_dir + "/config/deploy/shared/packages/foreman"
 require base_dir + "/config/deploy/shared/packages/sqlite"
-
-#load "cap_share/packages/postgresql"
-#load "cap_share/packages/unicorn"
-#load "cap_share/packages/nodejs"
-#load "cap_share/packages/rbenv"
-#load "cap_share/packages/check"
 
