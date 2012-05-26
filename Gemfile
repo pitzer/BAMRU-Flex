@@ -10,6 +10,8 @@ gem 'daemons'
 gem 'whenever'
 gem 'thor'
 
+gem 'net-ssh', '2.2.2'
+
 gem 'ghost'
 gem 'valkyrie'
 
@@ -43,7 +45,6 @@ group :development, :test do
   gem 'hirb'
   gem 'drx'
 
-  gem 'net-ssh', '2.4.0'
   gem 'capistrano'
   gem 'capistrano_colors'
 end
