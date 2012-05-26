@@ -4,14 +4,14 @@ require 'bundler/setup'
 # ====== Deployment Stages =====
 set :stages,        %w(staging production)
 set :default_stage, "staging"
-set :user,          "vagrant"
-set :proxy,         "flux"
+set :user,          "aleak"        # vagrant, aleak
+set :proxy,         "bnetx"        # bflexv,  bflexx
 
 # ===== App Config =====
 set :application, "BAMRU-Flex"
-set :app_name,    "flex"
+set :app_name,    "bflex"
 set :repository,  "https://github.com/andyl/#{application}.git"
-set :vhost_names, %w(flextest)
+set :vhost_names, %w(bflex bflextest)
 set :web_port,    9000
 
 # ===== Stage-Specific Code (config/deploy/<stage>) =====
