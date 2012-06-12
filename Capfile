@@ -1,31 +1,26 @@
 require 'rubygems'
 require 'bundler/setup'
-
-# ====== Deployment Stages =====
-set :stages,        %w(staging production)
-set :default_stage, "staging"
-set :user,          "aleak"        # vagrant, aleak
-set :proxy,         "bnetx"        # bflexv,  bflexx
+require File.expand_path('./lib/env_settings', File.dirname(__FILE__))
 
 # ===== App Config =====
-set :application, "BAMRU-Flex"
 set :app_name,    "bflex"
+set :application, "BAMRU-Flex"
 set :repository,  "https://github.com/andyl/#{application}.git"
 set :vhost_names, %w(bflex bflextest)
 set :web_port,    9000
 
-# ===== Stage-Specific Code (config/deploy/<stage>) =====
+# ===== Stage Specific Code =====
+set :stages,        %w(vagrant devstage pubstage production)
+set :default_stage, "vagrant"
 require 'capistrano/ext/multistage'
 
 # ===== Common Code for All Stages =====
 load 'deploy'
-load 'deploy/assets'
-base_dir = File.expand_path(File.dirname(__FILE__))
-Dir.glob("config/deploy/shared/base/*.rb").each {|f| require base_dir + '/' + f}
-Dir.glob("config/deploy/shared/recipes/*.rb").each {|f| require base_dir + '/' + f}
+share_dir = file.expand_path("config/deploy/shared", File.dirname(__FILE__))
+require "#{share_dir}/tasks"
 
 # ===== Package Definitions =====
-require base_dir + "/config/deploy/shared/packages/nginx"
-require base_dir + "/config/deploy/shared/packages/foreman"
-require base_dir + "/config/deploy/shared/packages/sqlite"
+require share_dir + "/packages/nginx"
+require share_dir + "/packages/foreman"
+require share_dir + "/packages/sqlite"
 
