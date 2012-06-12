@@ -1,8 +1,8 @@
-server 'fj1', :app, :web, :primary => true
-server 'kana', :app, :web
-server 'fils', :app, :web
+puts ' PRODUCTION '.center(70, '-')
 
-desc "This is a production only task"
-task :zzz do
-  run "uptime"
-end
+set :user,      "deploy"
+set :proxy,     "bamru1"
+set :branch,    fetch(:branch, "master")
+set :rails_env, fetch(:env,    "production")
+
+server proxy, :app, :web, :db, :primary => true
