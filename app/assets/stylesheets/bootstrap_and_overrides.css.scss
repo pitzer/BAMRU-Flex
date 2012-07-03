@@ -84,6 +84,14 @@ a#associates:link, a#associates:active, a#associates:hover, a#associates:visited
   margin-right: 5px;
 }
 
+.navbar .brand {
+  color: white;
+}
+
+.navbar .nav > li > a:hover {
+  background-color: black;
+}
+
 
 
 
