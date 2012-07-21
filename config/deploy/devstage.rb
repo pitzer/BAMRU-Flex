@@ -8,9 +8,9 @@ set :rails_env, fetch(:env,    "staging")
 server proxy, :app, :web, :db, :primary => true
 
 # setup vhost names in /etc/hosts
-after "deploy", "ghost:remote"
-after "deploy", "ghost:local"
-after "deploy", :precompile_assets
+after  "deploy", "ghost:remote"
+after  "deploy", "ghost:local"
+before "deploy:restart", :precompile_assets
 
 task :precompile_assets do
   run "cd #{release_path}; rake assets:precompile"
