@@ -1,0 +1,5 @@
+APP_NAME=bflex
+
+# default environment - automatically changed during deployment
+RAILS_ENV=development
+
