@@ -10,5 +10,8 @@ server proxy, :app, :web, :db, :primary => true
 # setup vhost names in /etc/hosts
 after "deploy", "ghost:remote"
 after "deploy", "ghost:local"
+after "deploy", :precompile_assets
 
-
+task :precompile_assets do
+  run "cd #{release_path}; rake assets:precompile"
+end
