@@ -6,7 +6,7 @@ require File.expand_path('./lib/env_settings', File.dirname(__FILE__))
 set :app_name,    "bflex"
 set :application, "BAMRU-Flex"
 set :repository,  "https://github.com/andyl/#{application}.git"
-set :vhost_names, %w(bflex bflextest)
+set :vhost_names, %w(flex.bamru.info bflex bflextest)
 set :web_port,    9000
 
 # ===== Stage Specific Code =====
