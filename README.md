@@ -15,13 +15,14 @@ This app has been developed on Ubuntu 12.04.  It will probably work on a Mac.
 It won't run on a vanilla PC, but may work with Cygwin. 
 
 To bootstrap the app:
-- get the application datafiles from Andy (database, image directory, environment file)
-- clone the repo & install the datafiles
+- clone the repo
 - install ruby 1.9.3 
 - install sqlite3
 - run `bundle install`
 - run `rake db:migrate`
 - run `rake db:data:load`
+
+FYI The calendar data for this prototype is at http://bamru.org/calendar.csv.
 
 To run the app in development:
 - run `rails server` 
